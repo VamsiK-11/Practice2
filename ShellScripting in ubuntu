@@ -1,0 +1,15 @@
+FROM Ubuntu  // This line specifies the base image for your Docker image. In this case, 
+you are using the "ubuntu" base image, which provides the Ubuntu Linux 
+operating system. 
+#Set the working directory inside container 
+WORKDIR /app     // sets the working directory inside the container to "/app." All subsequent   
+commands will be executed in this directory. 
+#Copy a script file to the container 
+COPY script.sh . 
+// copies the "script.sh" file from the host system into the "/app" directory of 
+the container. The "." refers to the current directory inside the container. 
+#Make the script executable 
+RUN chmod +x script.sh    // makes the "script.sh" file executable within the container by using the 
+"chmod" command. 
+CMD [ "./script.sh"] // specifies the command that should be executed when the container starts. 
+It tells Docker to run the "script.sh" script. 
